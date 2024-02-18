@@ -1,0 +1,698 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+@import "var.scss";
+@import "mixins.scss";
+@import "responsive.scss";
+html{
+    scroll-behavior: smooth;
+    body{
+        height:100%;
+        background-color:$primary-color;
+        font-family: 'Poppins', sans-serif;;
+        background-color:$primary-color;
+        ul{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        header{
+            @include positioning;
+            background-image:url(../images/bg-image.jpg);
+            @include background-img;
+            height:1000px;
+            nav{
+                ul{
+                    @include positioning(100%,20px 0);
+                    @include flex;
+                    list-style-type:none;
+                    li{
+                        a{
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            font-weight:bold;
+                            @include text(justify,25px,$primary-color)
+                        }
+                        a:hover{
+                            cursor:pointer;
+                            text-decoration: underline 2px #ccc;
+                        }
+                    }
+                }
+            }
+            #head-info{
+                height:100%;
+                @include positioning;
+                @include flex;
+                #head-text{
+                    h2{
+                        @include text(center,50px,$primary-color);
+                        padding:10px;
+                    }
+                    h1{
+                        @include text(center,40px,$primary-color);
+                    }
+                    .button{
+                        margin:20px;
+                        padding:10px;
+                        text-align: center;
+                    }
+                    .button a{
+                        @include borders;
+                        padding:20px 100px;
+                        @include text(center,30px,$primary-color);
+                    }
+                    .button a:hover{
+                        background-color: $secondary-color;
+                        color:#333333;
+                        @include box-shadow;
+                    }
+                }
+            }
+            }
+            }
+        main{
+            @include positioning(100%,50px);
+            #about{
+                @include flex(flex,space-between);
+                @include positioning(100%,20px);
+            .about-box{
+                width:48%;
+                height:550px;
+                img{
+                    width:100%;
+                    @include borders;
+                }
+                h3{
+                    @include title(0px);
+                    margin:30px 0;
+                }
+                p{
+                    @include text(justify,18px);
+                    margin:10px 10px;
+                }
+                .button{
+                    margin:20px 0;
+                    text-align: center;
+                }
+                .button a{
+                    @include borders;
+                    padding:15px 100px;
+                    @include text(center,20px,$text-color);
+                }
+                .button a:hover{
+                    background-color: $third-color;
+                    @include box-shadow;
+                }
+            }
+            }
+            #skills{
+                @include positioning;
+                h3{
+                    @include title;
+                text-decoration: underline $third-color;
+                }
+                #skills-wrapper{
+                    @include text(justify,20px,black);
+                    @include flex;
+                }
+                .skills-box{
+                    height:420px;
+                    width:30%;
+                    padding:20px;
+                    margin:20px;
+                    @include borders;
+                    @include text(center,25px,$text-color);
+                    p{
+                        @include text(justify,18px,$text-color)
+                    }
+                }
+                .skills-box:hover{
+                    cursor:pointer;
+                    @include box-shadow;
+                }
+            }
+            #projects{
+                @include positioning;
+                h3{
+                    @include title;
+                }
+                #projects-wrapper{
+                    @include flex;
+                    .project{
+                        width:40%;
+                        margin:20px 0;
+                        img{
+                            width:100%;
+                            @include borders;
+                        }
+                        p{
+                            @include text(center,20px,$text-color);
+                        }
+                        img:hover{
+                            @include box-shadow;
+                            cursor:pointer;
+                        }
+                    }
+                }
+            }
+            #contact{
+                @include positioning;
+                h3{
+                    @include title;
+                }
+                #contact-wrapper{
+                    @include flex;
+                    .contact-box{
+                        width:45%;
+                        form{
+                            width:100%;
+                            background-color: $third-color;
+                            @include borders;
+                            @include positioning;
+                            @include flex;
+                            flex-direction: column;
+                            input{
+                                @include borders;
+                                width:80%;
+                                height:50px;
+                                margin:10px 0;
+                                padding: 10px;
+                                @include text(left,15px);
+                            }
+                            textarea{
+                                    @include borders;
+                                    width:80%;
+                                    height:200px;
+                                    margin:10px 0;
+                                    padding: 10px;
+                                    @include text(left,15px);
+                            }
+                            input[type="submit"]{
+                                text-align: center;
+                            }
+                            input[type="submit"]:hover{
+                                cursor:pointer;
+                            }
+
+                        }
+                        p{
+                            @include positioning;
+                            @include text(left,22px);
+                            span{
+                                margin:10px 10px 10px 0;
+                                font-size:30px;
+                            }
+                        }
+                        
+                    }
+                    #social{
+                        @include flex(flex-start);
+                        @include positioning;
+                        img{
+                            margin:0 15px;
+                        }
+                    }
+                }
+            }
+        }
+       footer{
+            @include borders;
+            padding: 10px 0;
+            @include flex(flex,space-around);
+            background-color:#578F8C;
+            #links a{
+               padding:0 20px;
+            }
+            p{
+                @include text(center,20px,$primary-color)
+            }
+        }
+    }
+@media only screen and (min-width:2040px) {
+    body{
+        header{
+         height:1200px;
+         #head-info{
+            #head-text{
+                h2{
+                    @include text(center,50px,$primary-color);
+                }
+                h1{
+                    @include text(center,40px,$primary-color);
+                }
+                .button{
+                    margin:10px;
+                    padding:5px;
+                    text-align: center;
+                }
+                .button a{
+                    padding:20px 50px;
+                    @include text(center,30px,$primary-color);
+                }
+            }
+        }
+        }
+         main{
+             #about{
+                 .about-box{
+                     width:50%;
+                     img{
+                         width:80%;
+                     }
+                     p{
+                         font-size:25px;
+                     }
+                 }
+             }
+             #skills{
+                padding-top:150px;
+                 #skills-wrapper{
+                     .skills-box{
+                        font-size:30px;
+                     }
+                 }
+             }
+             #contact{
+                h3{
+                    font-size:28px;
+                }
+                #contact-wrapper{
+                    .contact-box{
+                        img{
+                            width:6%;
+                        }
+                        p{
+                            @include text(center,40px);
+                            span{
+                                font-size:40px;
+                            }
+                        }
+                    }
+                    #social{
+                        text-align: center;
+                    }
+                }
+            }
+         }
+     }
+}
+@media only screen and (max-width:1220px) {
+    h3{
+        font-size: 20px;
+    }
+    body{
+       header{
+        height:500px;
+       }
+        main{
+            #about{
+                height:40%;
+                .about-box{
+                    width:50%;
+                    @include flex(flex,space-around);
+                    flex-direction: row;
+                    @include positioning;
+                    img{
+                        width:80%;
+                    }
+                    p{
+                        font-size:20px;
+                    }
+                }
+            }
+            #skills{
+                #skills-wrapper{
+                    .skills-box{
+                        width:45%;
+                        height:380px;
+                        font-size: 25px;
+                        p{
+                            font-size:15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:960px) {
+html{
+    body{
+        header{
+            height:600px;
+            nav{
+                ul{
+                    li{
+                        a{
+                            @include text(justify,18px,$primary-color)
+                        }
+                        a:hover{
+                            cursor:pointer;
+                            text-decoration: underline 2px #ccc;
+                        }
+                    }
+                }
+            }
+            #head-info{
+                #head-text{
+                    h2{
+                        @include text(center,40px,$primary-color);
+                    }
+                    h1{
+                        @include text(center,30px,$primary-color);
+                    }
+                    .button{
+                        margin:10px;
+                        padding:5px;
+                        text-align: center;
+                    }
+                    .button a{
+                        padding:20px 50px;
+                        @include text(center,20px,$primary-color);
+                    }
+                }
+            }
+            }
+        main{
+            #about{
+                padding: 0px;
+                height:40%;
+                @include flex(flex,center);
+                    align-items: none;
+                .about-box{
+                    width:90%;
+                    height:100%;
+                    @include positioning;
+                    h3{
+                        font-size:28px;
+                    }
+                    img{
+                        width:80%;
+                    }
+                    p{
+                        font-size:15px;
+                    }
+                }
+            }
+            #skills{
+                h3{
+                    font-size:28px;
+                }
+                #skills-wrapper{
+                    .skills-box{
+                        width:80%;
+                        height:360px;
+                        font-size: 18px;
+                        h3{
+                            font-size:28px;
+                        }
+                        p{
+                            font-size:18px;
+                        }
+                    }
+                }
+            }
+            #projects{
+                h3{
+                    font-size:28px;
+                }
+                #projects-wrapper{
+                    @include flex;
+                    flex-direction: column;
+                    .project{
+                        width:80%;
+                        margin:20px 0;
+                        img{
+                            width:100%;
+                            @include borders;
+                        }
+                        p{
+                            @include text(center,20px,$text-color);
+                        }
+                    }
+                }
+        }
+        #contact{
+            h3{
+                font-size:28px;
+            }
+            #contact-wrapper{
+                @include flex;
+                flex-direction: column;
+                .contact-box{
+                    width:80%;
+                    
+                    p{
+                        @include positioning;
+                        @include text(center,20px);
+                        span{
+                            margin:10px 10px 10px 0;
+                            font-size:30px;
+                        }
+                    }
+                    
+                }
+                #social{
+                    text-align: center;
+                    img{
+                        margin:20px 15px;
+                    }
+                }
+            }
+        }
+        #skills{
+            #skills-wrapper{
+                .skills-box{
+                    width:90%;
+                    height:360px;
+                    p{
+                        font-size:15px;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        #arrow{
+            display:none;
+        }
+        #links a{
+           padding:0 20px;
+           img{
+            width:10%;
+        }
+        }
+        p{
+            @include text(center,15px,$primary-color)
+        }
+    }
+    }
+}
+@media only screen and (max-width:720px) {
+html{
+    body{
+        header{
+            height:700px;
+        }
+        main{
+            #about{
+                .about-box{
+                    margin:5px;
+                    width:100%;
+                    @include flex(flex,space-around);
+                    flex-direction: row;
+                    @include positioning;
+                    padding:0;
+                    img{
+                        width:100%;
+                    }
+                    p{
+                        font-size:15px;
+                    }
+                }
+            }
+            #skills{
+                #skills-wrapper{
+                    .skills-box{
+                        width:100%;
+                        height:320px;
+                        img{
+                            width:25%;
+                        }
+                        p{
+                            font-size:15px;
+                        }
+                    }
+                }
+            }                    
+                }
+                #social{
+                    text-align: center;
+                    img{
+                        margin:20px 15px;
+                        width:10%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:590px) {
+        html{
+           body{
+                main{  
+                #projects{
+                    #projects-wrapper{
+                        .project{
+                            width:100%;
+                            p{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+            }            
+            #contact{
+                h3{
+                    font-size:28px;
+                }
+                #contact-wrapper{
+
+                    .contact-box{
+                        width:100%;
+                        form{
+                            width:100%;
+                        }
+                        p{
+                            @include text(center,16px);
+                        }
+                        
+                    }
+                }
+            }
+        }
+            footer{
+                @include flex(center,center);
+                flex-direction: column;
+                #arrow{
+                    display:none;
+                }
+                #links{
+                    padding-bottom: 5px;
+                    text-align: center;
+                }
+                #links a{
+                   img{
+                    width:9%;
+                }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:480px) {
+        html{  
+           body{
+            header{
+                height:600px;
+                nav{
+                    ul{
+                        text-align: center;
+                        display:block;
+                        padding:0;
+                        li{
+                            padding:5px 0;
+                            a{
+                            font-size:18px;
+                            }
+                        }
+                    }
+                }
+                #head-info{
+                    #head-text{
+                        h2{
+                            font-size:30px;
+                        }
+                        h1{
+                           font-size:20px;
+                        }
+                        .button{
+                            margin:10px;
+                            padding:5px;
+                            text-align: center;
+                        }
+                        .button a{
+                            padding:15px 30px;
+                            font-size:15px;
+                        }
+                    }
+                }
+            }
+                main{  
+                    #about{
+                        .about-box{
+                            width:100%;
+                    .button{
+                        margin:10px;
+                        padding:5px;
+                        text-align: center;
+                    }
+                    .button a{
+                        padding:15px 30px;
+                        font-size:15px;
+                    }
+                }
+            }
+                    #skills{
+                        width:100%;
+                        #skills-wrapper{
+                            width:100%;
+                            .skills-box{
+                                width:100%;
+                                height:400px;
+                                img{
+                                    width:20%;
+                                }
+                                p{
+                                    font-size:14px;
+                                }
+                            }
+                        }
+                    }
+                    #contact{
+                        h3{
+                            font-size:28px;
+                        }
+                        #contact-wrapper{
+                            @include flex;
+                            flex-direction: column;
+                            .contact-box{
+                                form{
+                                    width:100%;
+                                    input{
+                                        width:90%;
+                                        font-size:12px;
+                                    }
+                                    textarea{
+                                            width:90%;
+                                            font-size: 12px;
+                                    }
+                                }
+                                p{
+                                    @include text(center,14px);
+                                    span{
+                                        font-size:20px;
+                                    }
+                                }
+                                
+                            }
+                            }
+                        }
+
+        }
+    }
+}
+}
