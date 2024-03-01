@@ -1,0 +1,46 @@
+$font:Arial;
+$primary-color:#e9e9e9;
+$secondary-color:#CCC;
+$third-color:#578F8C;
+$text-color:#333333;
+$font-size1:15px;
+$font-size2:30px;
+
+@mixin flex($d:flex,$jc:space-around){
+    display: $d;
+    flex-wrap: wrap;
+    justify-content: $jc;
+    align-items: center;
+}
+@mixin positioning($w:100%,$p:10px){
+    width:$w;
+    padding:$p;
+    margin:0 auto;
+}
+@mixin background-img{
+    width:100%;
+    background-position: center;
+    background-size: cover;
+}
+@mixin text($ta:center,$fs:18px,$c:$text-color){
+    text-align: $ta;
+    font-size: $fs;
+    color:$c;
+}
+@mixin title($p:20px){
+    text-align: center;
+    font-size:40px;
+    color:black;
+    padding:$p;
+    text-transform: uppercase;
+    text-decoration:underline 3px $third-color;
+}
+@mixin borders($c:#ccc)
+{
+    border:3px solid $c;
+    box-shadow:2px 2px $c;
+    border-radius: 25px;
+}
+@mixin box-shadow{
+    box-shadow:5px 3px #ccc;
+}
